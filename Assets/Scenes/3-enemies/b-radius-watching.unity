@@ -160,7 +160,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -401,10 +401,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveAction:
-    m_Name: 
+    m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 
+    m_Id: 93037777-341a-4d1a-9196-af5152351a94
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
@@ -414,7 +414,7 @@ MonoBehaviour:
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: 
+      m_Action: Move
       m_Flags: 4
     - m_Name: Up
       m_Id: b204130b-7c7e-4065-98e5-bef1f583e201
@@ -422,7 +422,7 @@ MonoBehaviour:
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: 
+      m_Action: Move
       m_Flags: 8
     - m_Name: Down
       m_Id: 633b848a-2298-46bc-9da7-a66a66e41314
@@ -430,7 +430,7 @@ MonoBehaviour:
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: 
+      m_Action: Move
       m_Flags: 8
     - m_Name: Left
       m_Id: 16a778c9-154f-4303-a342-bc1bdb4c8461
@@ -438,7 +438,7 @@ MonoBehaviour:
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: 
+      m_Action: Move
       m_Flags: 8
     - m_Name: Right
       m_Id: 06a60be5-35db-4905-9cde-2ca6e3cc6f6e
@@ -446,11 +446,12 @@ MonoBehaviour:
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: 
+      m_Action: Move
       m_Flags: 8
     m_Flags: 0
   tilemap: {fileID: 931517250}
   allowedTiles: {fileID: 1972678413}
+  isOnShip: 0
 --- !u!1 &931517247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,6 +2603,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
   - {fileID: 11400000, guid: 2ad1759387b28444892c8549e6122652, type: 2}
   - {fileID: 11400000, guid: 8f2cab6dea1a2d147b231cc92eb1f7e2, type: 2}
+  - {fileID: 11400000, guid: 152705e5950ceca4c81937182440498f, type: 2}
+  - {fileID: 11400000, guid: ce01ffe1c4a81764b9d42045fe4af396, type: 2}
+  - {fileID: 11400000, guid: c114e112c138eee40a0da28061edac03, type: 2}
+  seaTiles:
+  - {fileID: 11400000, guid: fbc7e53732751274190a9ea1250192b4, type: 2}
+  - {fileID: 11400000, guid: 0230b48a2cd148149bf5502ca7328478, type: 2}
+  - {fileID: 11400000, guid: ea56eece63aba35469fea812356c7a92, type: 2}
+  shipTile: {fileID: 11400000, guid: c114e112c138eee40a0da28061edac03, type: 2}
 --- !u!1 &2052329452
 GameObject:
   m_ObjectHideFlags: 0
