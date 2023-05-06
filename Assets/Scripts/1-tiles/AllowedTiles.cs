@@ -11,6 +11,9 @@ public class AllowedTiles : MonoBehaviour
     [SerializeField] TileBase[] allowedTiles = null;
     [SerializeField] TileBase[] seaTiles = null;
     [SerializeField] TileBase shipTile = null;
+    [SerializeField] TileBase horseTile = null;
+    [SerializeField] TileBase axeTile = null;
+    [SerializeField] TileBase mountainsTile = null;
     public bool Contain(TileBase tile)
     {
         return allowedTiles.Contains(tile);
@@ -25,6 +28,21 @@ public class AllowedTiles : MonoBehaviour
     public bool IsShipTile(TileBase tile)
     {
         return shipTile == tile;
+    }
+
+    public bool IsHorseTile(TileBase tile)
+    {
+        return horseTile == tile;
+    }
+
+    public bool IsAxeTile(TileBase tile)
+    {
+        return axeTile == tile;
+    }
+
+    public bool IsMountainsTile(TileBase tile)
+    {
+        return mountainsTile == tile;
     }
     public TileBase[] Get() { return allowedTiles; }
 }
