@@ -6,7 +6,7 @@
 // /**
 //  * A graph that represents a tilemap, using only the allowed tiles.
 //  */
-// public class TilemapWeightedGraph : Graph<Node<Vector3Int>>
+// public class TilemapWeightedGraph : IWeightedGraph<Vector3Int>
 // {
 //     private Tilemap tilemap;
 //     private TileBase[] allowedTiles;
@@ -15,26 +15,8 @@
 //     {
 //         this.tilemap = tilemap;
 //         this.allowedTiles = allowedTiles;
-
-//         // Create nodes for each position in the tilemap
-//         foreach (var pos in tilemap.cellBounds.allPositionsWithin)
-//         {
-//             Vector3Int roundedPos = new Vector3Int(pos.x, pos.y, 0);
-//             if (allowedTiles.Contains(tilemap.GetTile(roundedPos)))
-//             {
-//                 Nodes.Add(new Node<Vector3Int>(roundedPos));
-//             }
-//         }
-
-//         // Connect neighboring nodes
-//         foreach (var node in Nodes)
-//         {
-//             foreach (var neighbor in Neighbors(node.Id))
-//             {
-//                 node.AddNeighbor(Nodes.First(n => n.Id == neighbor.Key), neighbor.Value);
-//             }
-//         }
 //     }
+
 
 //     static Vector3Int[] directions = {
 //             new Vector3Int(-1, 0, 0),
@@ -43,6 +25,22 @@
 //             new Vector3Int(0, 1, 0),
 //     };
 
+//     public IEnumerable<Vector3Int> GetNodes()
+//     {
+//         BoundsInt bounds = tilemap.cellBounds;
+//         for (int x = bounds.min.x; x < bounds.max.x; x++)
+//         {
+//             for (int y = bounds.min.y; y < bounds.max.y; y++)
+//             {
+//                 Vector3Int pos = new Vector3Int(x, y, 0);
+//                 TileBase tile = tilemap.GetTile(pos);
+//                 if (allowedTiles.Contains(tile))
+//                 {
+//                     yield return pos;
+//                 }
+//             }
+//         }
+//     }
 //     public IEnumerable<KeyValuePair<Vector3Int, int>> Neighbors(Vector3Int node)
 //     {
 //         foreach (var direction in directions)
