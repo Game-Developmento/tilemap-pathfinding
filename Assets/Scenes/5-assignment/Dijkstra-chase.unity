@@ -513,6 +513,15 @@ MonoBehaviour:
   tilemap: {fileID: 931517250}
   allowedTiles: {fileID: 1972678413}
   isOnShip: 0
+  isOnMountains: 0
+  spriteToRender: {fileID: 445804560636057897, guid: 0958ae8472e8df2449fefebb187038bd,
+    type: 3}
+  playerSprite: {fileID: 445804560636057897, guid: 0958ae8472e8df2449fefebb187038bd,
+    type: 3}
+  shipSprite: {fileID: 572422050, guid: ed7c0eb26ca58bf429a2fe98791388ae, type: 3}
+  horseSprite: {fileID: 1186575586, guid: ed7c0eb26ca58bf429a2fe98791388ae, type: 3}
+  axePlayerSprite: {fileID: 885744516, guid: ed7c0eb26ca58bf429a2fe98791388ae, type: 3}
+  grassTile: {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
 --- !u!1 &931517247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,7 +2679,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ad1759387b28444892c8549e6122652, type: 2}
   - {fileID: 11400000, guid: 8f2cab6dea1a2d147b231cc92eb1f7e2, type: 2}
   seaTiles: []
-  shipTile: {fileID: 0}
+  shipTile: {fileID: 11400000, guid: c114e112c138eee40a0da28061edac03, type: 2}
+  horseTile: {fileID: 11400000, guid: 152705e5950ceca4c81937182440498f, type: 2}
+  axeTile: {fileID: 11400000, guid: ce01ffe1c4a81764b9d42045fe4af396, type: 2}
+  mountainsTile: {fileID: 11400000, guid: 546c35550ead79941af5f505fdd175ec, type: 2}
 --- !u!1 &2052329452
 GameObject:
   m_ObjectHideFlags: 0
