@@ -39,7 +39,20 @@ public class TilemapWeightedGraph : IWeightedGraph<Vector3Int>
             }
         }
     }
-
+    public int GetWeight(TileBase tile)
+    {
+        switch (tile.name)
+        {
+            case "bushes":
+                return 5;
+            case "grass":
+                return 3;
+            case "hills":
+                return 10;
+            default:
+                return 1;
+        }
+    }
     public IEnumerable<(Vector3Int node, int weight)> Neighbors(Vector3Int node)
     {
         foreach (var direction in directions)
@@ -51,32 +64,14 @@ public class TilemapWeightedGraph : IWeightedGraph<Vector3Int>
             // Assign weights based on tile name
             if (neighborTile)
             {
-                Debug.Log(neighborTile.name);
-                if (neighborTile.name == "bushes")
+                weight = GetWeight(neighborTile);
+                if (allowedTiles.Contains(neighborTile))
                 {
-                    weight = 5;
+                    yield return (neighborPos, weight);
                 }
-                else if (neighborTile.name == "grass")
-                {
-                    weight = 3;
-                }
-                else if (neighborTile.name == "swamp")
-                {
-                    weight = 2;
-                }
-                else if (neighborTile.name == "hills")
-                {
-                    weight = 10;
-
-                }
-            }
-           
-            if (allowedTiles.Contains(neighborTile))
-            {
-                yield return (neighborPos, weight);
             }
         }
     }
-
-
 }
+
+

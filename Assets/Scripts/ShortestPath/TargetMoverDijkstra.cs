@@ -12,7 +12,7 @@ public class TargetMoverDijkstra : MonoBehaviour
     [SerializeField] AllowedTiles allowedTiles = null;
 
     [Tooltip("The speed by which the object moves towards the target, in meters (=grid units) per second")]
-    [SerializeField] float speed = 2f;
+    [SerializeField] float speed = 10f;
 
     // [Tooltip("Maximum number of iterations before BFS algorithm gives up on finding a path")]
     // [SerializeField] int maxIterations = 1000;
@@ -69,6 +69,9 @@ public class TargetMoverDijkstra : MonoBehaviour
         if (shortestPath.Count >= 2)
         { // shortestPath contains both source and target.
             Vector3Int nextNode = shortestPath[1];
+            TileBase tile = tilemap.GetTile(nextNode);
+            int TileWeight = tilemapGraph.GetWeight(tile);
+            timeBetweenSteps = TileWeight / speed;
             transform.position = tilemap.GetCellCenterWorld(nextNode);
         }
         else
