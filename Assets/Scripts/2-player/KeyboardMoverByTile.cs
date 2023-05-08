@@ -38,6 +38,7 @@ public class KeyboardMoverByTile : KeyboardMover
         }
         else if ((spriteToRender == axePlayerSprite) && allowedTiles.IsMountainsTile(tileOnNewPosition))
         {
+            // Changes mountains to grass tiles
             tilemap.SetTile(tilemap.WorldToCell(newPosition), grassTile);
             transform.position = newPosition;
         }
@@ -74,7 +75,9 @@ public class KeyboardMoverByTile : KeyboardMover
         }
         else if ((spriteToRender == horseSprite) && allowedTiles.IsMountainsTile(tile))
         {
-            isOnMountains = true;
+            // Marks the first time the player stepped on mountains. 
+            // This is used to detect when the player is off of the mountains to render back to the playerSprite.
+            isOnMountains = true; 
         }
         else if (isOnMountains && !allowedTiles.IsMountainsTile(tile)) // Not on mountains
         {
