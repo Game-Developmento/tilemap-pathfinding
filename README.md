@@ -1,28 +1,19 @@
-# Unity week 5: Two-dimensional scene-building and path-finding
-
-A project with step-by-step scenes illustrating how to construct a 2D scene using tilemaps,
-and how to do path-finding using the BFS algorithm.
-
-Text explanations are available 
-[here](https://github.com/gamedev-at-ariel/gamedev-5782) in folder 07.
-
-## Cloning
-To clone the project, you may need to install git lfs first:
-
-    git lfs install 
+# tilemap-path-finding
 
 
-## Credits
+# Second Part - Dijkstra Algorithm
 
-Graphics:
-* [Ultima 4 Graphics](https://github.com/jahshuwaa/u4graphics) by Joshua Steele.
+## Introduction
+we utilized the TileMap from the class and implemented the Dijkstra algorithm to create enemies that chase the player intelligently.
+the player's objective is to escape from the enemies.  
+[Click here to play the game!](https://orihoward.itch.io/runaway)
+## Implementation
+The Dijkstra algorithm is used in conjunction with the game itself. The algorithm is attached to the enemies, which are programmed to chase the player. The player moves at the same speed on all types of tiles, but the enemies have different speeds on different tiles. To implement this, we created a weighted graph of the TileMap and used it to calculate the shortest path between the enemies and the player. The algorithm is run each step because the player can change position at any time, and we need to recalculate the path.
 
-Online course:
-* [Unity 2D](https://www.udemy.com/course/unitycourse/learn/lecture/10246496), a Udemy course by Gamedev.tv.
-* [Unity RPG](https://www.gamedev.tv/p/unity-rpg/?product_id=1503859&coupon_code=JOINUS).
+## Scripts
+Dijkstra: This script contains the implementation of the Dijkstra algorithm.
+IWeightedGraph: This is an interface of the graph, which has two functions: IEnumerable<(T node, int weight)> Neighbors(T node) and IEnumerable<T> GetNodes().
+TargetMoverDijkstra: This script handles the movement of the enemies using the Dijkstra algorithm. It runs the algorithm each step to recalculate the path.
+TilemapWeightedGraph: This script implements the interface of the weighted graph and creates a graph of the TileMap.
+newChaser: This script inherits from TargetMoverDijkstra and updates the target position so that the enemies will follow the target.
 
-Procedural generation:
-* [Habrador - Unity Programming Patterns](https://github.com/Habrador/Unity-Programming-Patterns#7-double-buffer)
-
-Programming:
-* Erel Segal-Halevi
